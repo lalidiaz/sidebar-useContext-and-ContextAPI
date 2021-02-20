@@ -1,15 +1,18 @@
 import React from 'react';
-import { FaBars } from 'react-icons/fa';
+import { CgEditBlackPoint } from 'react-icons/cg';
 import { useGlobalContext } from '../context';
 
 const Home = () => {
-  const data = useGlobalContext();
+  const { openSidebar, openModal } = useGlobalContext();
+
   return (
     <main>
-      <button className="sidebar-toggle">
-        <FaBars />
+      <button className="sidebar-toggle" onClick={openSidebar}>
+        <CgEditBlackPoint />
       </button>
-      <button className="btn">show modal</button>
+      <button className="btn" onClick={openModal}>
+        Click here to subscribe!
+      </button>
     </main>
   );
 };
